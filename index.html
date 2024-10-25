@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Attendance Tracker</h1>
+        <div id="message-container" class="message"></div> <!-- Message display here -->
+        <input type="text" id="search-cnic" placeholder="Enter CNIC" />
+        <button onclick="searchAndMark()">Mark Present</button>
+        <button onclick="downloadXLS()">Download XLS</button>
+        <table id="player-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>CNIC</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be populated here -->
+            </tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
