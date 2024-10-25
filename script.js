@@ -42,7 +42,7 @@ const players = [
 ];
 
 // Load data from local storage if available
-const storedData = JSON.parse(localStorage.getItem("eventData")) || players;
+const storedData = JSON.parse(localStorage.getItem("eventdata")) || players;
 
 // Message container
 const messageContainer = document.getElementById("message-container");
@@ -103,7 +103,7 @@ function showMessage(message) {
 }
 
 function saveData() {
-    localStorage.setItem("eventData", JSON.stringify(storedData));
+    localStorage.setItem("eventdata", JSON.stringify(storedData));
 }
 
 function downloadXLS() {
