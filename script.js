@@ -42,7 +42,7 @@ const players = [
 ];
 
 // Load data from local storage if available
-const storedData = JSON.parse(localStorage.getItem("eventdata")) || players;
+const storedData = JSON.parse(localStorage.getItem("eventData")) || players;
 
 // Message container
 const messageContainer = document.getElementById("message-container");
@@ -89,7 +89,9 @@ function promptForPassword(index) {
     const password = prompt("Enter password to update status:");
     if (password === "yourPassword") { // Replace with your actual password
         storedData[index].status = storedData[index].status === "Present" ? "Not Present" : "Present"; // Toggle status
-        renderTable();
+        showMessage(`${storedData[index].name}'s status updated to ${storedData[index].status}!`);
+        saveData(); // Save data after updating status
+        renderTable(); // Refresh the table to reflect changes
     } else {
         showMessage("Incorrect password.");
     }
@@ -103,7 +105,7 @@ function showMessage(message) {
 }
 
 function saveData() {
-    localStorage.setItem("eventdata", JSON.stringify(storedData));
+    localStorage.setItem("eventData", JSON.stringify(storedData));
 }
 
 function downloadXLS() {
